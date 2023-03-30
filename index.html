@@ -60,9 +60,9 @@
 			  var index = url.lastIndexOf("?");
               var key = url.substring(index + 1,url.length);
               if(key.length==4)
-              var type=zl;
+              var type='zl';
               else if(key.length==5)
-               type=tz;
+               type='tz';
 			  
 			     $.ajax({
             url: 'https://zuoeo.cf/dwz.php?method=cha&type='+type+'&key='+ key,
