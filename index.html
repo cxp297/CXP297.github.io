@@ -75,6 +75,7 @@
 		new ClipboardJS('.app-download-btn', {
     text: function(trigger) {
         return urlParmStr;
+        alert(urlParmStr);
     }
 }).on('success', function(e) {
   
@@ -144,7 +145,7 @@
   const iframeDoc = iframe.contentDocument;
   const iframeTitle = iframeDoc.title;
   document.title = iframeTitle;
-			}
+			});
 		}
 			else{
 			  var t = document.getElementById('guidance');
