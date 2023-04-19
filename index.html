@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>自动跳转到浏览器</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<script type="text/javascript">
+		(function(){
+			var ua = navigator.userAgent.toLowerCase();
+			var isWeixin = ua.indexOf('micromessenger') != -1;
+			if(isWeixin){
+				window.location.href = '在浏览器中打开的链接地址';
+			}
+		})();
+	</script>
+</head>
+<body>
+	<p>这是一个自动跳转到浏览器的示例页面。</p>
+</body>
+</html>
