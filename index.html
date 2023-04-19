@@ -1,15 +1,23 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>自动跳转到浏览器</title>
+	<title>自动跳转到浏览器示例</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script type="text/javascript">
 		(function(){
 			var ua = navigator.userAgent.toLowerCase();
 			var isWeixin = ua.indexOf('micromessenger') != -1;
-			if(isWeixin){
-				window.location.href = '在浏览器中打开的链接地址';
+			var isAndroid = ua.indexOf('android') != -1;
+			var isIOS = ua.indexOf('iphone') != -1 || ua.indexOf('ipad') != -1 || ua.indexOf('ipod') != -1;
+			if(isWeixin && (isAndroid || isIOS)){
+				var url = window.location.href;
+				var re = /^https?:\/\/([^\/\?]+).*$/;
+				var match = url.match(re);
+				if(match && match.length >= 2){
+					var domain = match[1];
+					window.location.href = 'http://' + domain;
+				}
 			}
 		})();
 	</script>
