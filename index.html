@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>自动跳转到浏览器示例</title>
+	<title>自动跳转到 QQ 浏览器示例</title>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<script type="text/javascript">
@@ -16,13 +16,13 @@
 				var match = url.match(re);
 				if(match && match.length >= 2){
 					var domain = match[1];
-					window.location.href = 'http://' + domain;
+					window.location.href = 'mqqbrowser://url=' + encodeURIComponent(url) + '&navBarHidden=1';
 				}
 			}
 		})();
 	</script>
 </head>
 <body>
-	<p>这是一个自动跳转到浏览器的示例页面。</p>
+	<p>这是一个自动跳转到 QQ 浏览器的示例页面。</p>
 </body>
 </html>
